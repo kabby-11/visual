@@ -19,10 +19,10 @@ interface BoardListProps {
 }
 
 export function BoardList({ orgId, query }: BoardListProps) {
-  const searchParams = useSearchParams();//using hook here
-  const favourites = searchParams.get('favourites');
-  const searches = searchParams.get('search') || "";
-  const data = useQuery(api.boards.get, { orgId, search: searches });
+  // const searchParams = useSearchParams();//using hook here
+  // const favourites = searchParams.get('favourites');
+  // const searches = searchParams.get('search') || "";
+  const data = useQuery(api.boards.get, { orgId, search: query.search });
 
 
   if (data === undefined) {
@@ -30,7 +30,7 @@ export function BoardList({ orgId, query }: BoardListProps) {
       <div>
         <h2 className="text-3xl">
           {/* -> here 'favourites' is acting like a switch that will select whether we are at Favourite Boards page or Team boards page */}
-          {favourites ? "Favourite Boards" : "Team boards"}
+          {query.favourites ? "Favourite Boards" : "Team boards"}
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 gap-5 mt-8 pb-10">
           <NewBoardButton orgId={orgId} disabled />
@@ -43,11 +43,11 @@ export function BoardList({ orgId, query }: BoardListProps) {
     );
   }
 
-  if (!data?.length && searches) {
+  if (!data?.length && query.search) {
     return <EmptySearch />;
   }
 
-  if (!data?.length && favourites) {
+  if (!data?.length && query.favourites) {
     return <EmptyFavourites />;
   }
 
@@ -58,7 +58,7 @@ export function BoardList({ orgId, query }: BoardListProps) {
   return (
     <div>
       <h2 className="text-3xl">
-        {favourites ? "Favourite Boards" : "Team boards"}
+        {query.favourites ? "Favourite Boards" : "Team boards"}
       </h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 gap-5 mt-8 pb-10">
         <NewBoardButton orgId={orgId} />

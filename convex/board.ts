@@ -117,11 +117,8 @@ export const favourite = mutation({
 
     const existingFavourite = await ctx.db
       .query("userFavourites")
-      .withIndex("by_user_board_org", (q) =>
-        q.eq("userId", userId)
-         .eq("boardId", board._id)
-         .eq("orgId", args.orgId)
-         
+      .withIndex("by_user_board", (q) =>
+        q.eq("userId", userId).eq("boardId", board._id)
       )
       .unique();
 
@@ -159,9 +156,7 @@ export const unfavourite = mutation({
     const existingFavourite = await ctx.db
       .query("userFavourites")
       .withIndex("by_user_board", (q) =>
-        q.eq("userId", userId)
-         .eq("boardId", board._id)
-         
+        q.eq("userId", userId).eq("boardId", board._id)
       )
       .unique();
 
@@ -175,15 +170,15 @@ export const unfavourite = mutation({
   },
 });
 
-// export const get = query({
-//   args: { id: v.id("boards") },
-//   handler: async (ctx, args) => {
-//     const board = await ctx.db.get(args.id);
+export const get = query({
+  args: { id: v.id("boards") },
+  handler: async (ctx, args) => {
+    const board = await ctx.db.get(args.id);
 
-//     if (!board) {
-//       throw new Error("Board not found");
-//     }
+    if (!board) {
+      throw new Error("Board not found");
+    }
 
-//     return board;
-//   },
-// });
+    return board;
+  },
+});
