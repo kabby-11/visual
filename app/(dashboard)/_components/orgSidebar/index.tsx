@@ -17,7 +17,8 @@ const font = Poppins({
 export function OrgSidebar() {
   const searchParams = useSearchParams();
 
-  const favourites = searchParams.get("favourites");
+  const isfavourites = searchParams.get("favourites");
+  console.log("Favourites: " , isfavourites);
 
   return (
     <div className="hidden lg:flex flex-col space-y-6 w-[206px] pl-5 pt-5">
@@ -25,7 +26,7 @@ export function OrgSidebar() {
         <div className="flex items-center gap-x-2">
           <Image src="/logo.svg" alt="Logo" height={60} width={60} />
           <span className={cn("font-semibold text-2xl", font.className)}>
-            Visual
+            Board
           </span>
         </div>
       </Link>
@@ -63,7 +64,7 @@ export function OrgSidebar() {
           </Link>
         </Button>
         <Button
-          variant={favourites ? "secondary" : "ghost"}
+          variant={isfavourites ? "secondary" : "ghost"}
           asChild
           size="lg"
           className="font-normal justify-start px-2 w-full"

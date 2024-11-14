@@ -17,7 +17,7 @@ export default function ConvexClientProvider({
   children,
 }: ConvexClientProviderProps) {
   return (
-    <ClerkProvider dynamic publishableKey={process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY!}>
+    <ClerkProvider publishableKey={process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY!}>
       <ConvexProviderWithClerk client={convex} useAuth={useAuth}>
         <Authenticated>{children}</Authenticated>
         <AuthLoading>

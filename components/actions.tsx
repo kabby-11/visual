@@ -56,9 +56,6 @@ export function Actions({
   };
 
   return (
-    // <div className="absolute z-50 top-1 right-1">
-    //     Actions!
-    // </div>
     <DropdownMenu>
       <DropdownMenuTrigger asChild>{children}</DropdownMenuTrigger>
       <DropdownMenuContent
