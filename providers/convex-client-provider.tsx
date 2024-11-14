@@ -1,7 +1,7 @@
 "use client";
 
 import Loading from "@/components/auth/loading";
-import { ClerkProvider, useAuth } from "@clerk/nextjs";
+import { ClerkProvider, useAuth } from "@clerk/clerk-react";
 import { AuthLoading, Authenticated, ConvexReactClient } from "convex/react";
 import { ConvexProviderWithClerk } from "convex/react-clerk";
 

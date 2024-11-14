@@ -93,7 +93,6 @@ export const {
     useEventListener,
     useErrorListener,
     useStorage,
-    useBatch,
     useHistory,
     useUndo,
     useRedo,
