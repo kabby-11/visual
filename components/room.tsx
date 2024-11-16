@@ -16,9 +16,10 @@ export const Room = ({
     children: ReactNode
     roomId: string ;
 }) => {
+  //used fallback because if the room is not loaded then we will have al alternative for it.
   return (
     // <LiveblocksProvider publicApiKey={process.env.LIVEBLOCKS_PUBLIC_KEY!}>
-    <LiveblocksProvider publicApiKey={"pk_prod_8IjGccBIbU7Kq0gUPWGuFhFLnXeHiQw5KT_BZHg0Ba0XRERkdCfko_6oa68jHqo4"}> 
+    <LiveblocksProvider authEndpoint="/api/liveblocks-auth"> 
       <RoomProvider id={roomId}>
         <ClientSideSuspense fallback={<div>Loading…</div>}>
           {children}
