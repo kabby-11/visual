@@ -28,7 +28,7 @@ import {
         <Tooltip delayDuration={100} disableHoverableContent>
           <TooltipTrigger asChild>{children}</TooltipTrigger>
           <TooltipContent
-            className="text-white bg-black bg-opacity-50 border-black"
+            className="text-white bg-black bg-opacity-70 border-black"
             side={side}
             align={align}
             sideOffset={sideOffset}

@@ -47,7 +47,7 @@ export const Info = ({ boardId }: InfoProps) => {
                 font.className
               )}
             >
-              Board
+              Visual
             </span>
           </Link>
         </Button>

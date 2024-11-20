@@ -10,7 +10,7 @@ const liveBlocks = new Liveblocks({
 });
 
 export async function POST(request: Request) {
-  const authorization =  auth();
+  const authorization = await auth();
   const user = await currentUser();
 
   
