@@ -134,6 +134,7 @@ export type CanvasState =
         | LayerType.Ellipse
         | LayerType.Rectangle
         | LayerType.Text
+        | LayerType.Image
         | LayerType.Note;
     }
   | { 
