@@ -104,12 +104,12 @@ export const Toolbar = ({
                  })}
                  isActive = {canvasState.mode === CanvasMode.Pencil }
                 />
-                <ToolButton 
+                {/* <ToolButton 
                 label = "Width"
                 icon={ BsBorderWidth }               
                  onClick = {() => {}}
                  isActive = {false}
-                />
+                /> */}
                 {/* <ToolButton 
                 label = "Eraser"
                 icon={ Eraser }               
