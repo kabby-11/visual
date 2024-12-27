@@ -51,15 +51,6 @@ export type PathLayer = {
   value?: string;
 };
 
-export type ImageLayer = {
-  type: LayerType.Image;
-  x: number;
-  y: number;
-  height: number;
-  width: number;
-  fill: Color;
-  value?: string;
-};
 
 export type EraserLayer = {
   type: LayerType.Eraser;
@@ -134,7 +125,6 @@ export type CanvasState =
         | LayerType.Ellipse
         | LayerType.Rectangle
         | LayerType.Text
-        | LayerType.Image
         | LayerType.Note;
     }
   | { 
@@ -168,5 +158,4 @@ export type Layer =
   | PathLayer
   | TextLayer
   | EraserLayer
-  | ImageLayer
   | NoteLayer;

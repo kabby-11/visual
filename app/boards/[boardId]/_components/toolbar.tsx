@@ -4,10 +4,8 @@ import { ToolButton } from "./toolButton";
 import { MousePointer2, Type, StickyNote, Square, Circle, Pencil, Eraser, Download ,LogOut, Grid3X3, Undo2, Redo2} from "lucide-react"
 import { BsBorderWidth, BsFillImageFill} from "react-icons/bs";
 import { CanvasMode, CanvasState, LayerType } from "@/types/canvas";
-import BackgroundPicker from "./backgroundPicker";
 import Exit from "./exit";
 import { GridPatternDashed } from "./gridPattern";
-import ImagePicker from "./imagePicker";
 // import BackgroundPicker from "./backgroundPicker";
 
 
@@ -129,7 +127,6 @@ export const Toolbar = ({
                  onClick = {() => {}}
                  isActive = {false}
                 /> */}
-                <ImagePicker />
                 {/* <ToolButton 
                 label = "Download"
                 icon={ Download }               
